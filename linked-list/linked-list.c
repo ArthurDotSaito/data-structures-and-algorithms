@@ -78,3 +78,28 @@ void push(node *linkedList)
     linkedList->next = newNode;
     newNode->next = oldHead;
 }
+
+void pop(node *linkedList)
+{
+    node *newNode = (node *)malloc(sizeof(node));
+    {
+        printf("There's no available memory.\n");
+        exit(1);
+    }
+    printf("value to pop: ");
+    scanf("%d", &newNode->value);
+    newNode->next = NULL;
+    if (isEmpty(linkedList))
+    {
+        linkedList->next = newNode;
+    }
+    else
+    {
+        node *temp = linkedList->next;
+        while (temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
+}
