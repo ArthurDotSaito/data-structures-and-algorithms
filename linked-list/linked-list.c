@@ -61,3 +61,20 @@ void showList(node *linkedList)
     }
     printf("\n\n");
 }
+
+void push(node *linkedList)
+{
+    node *newNode = (node *)malloc(sizeof(node));
+    if (!newNode)
+    {
+        printf("There's no available memory.\n");
+        exit(1);
+    }
+    printf("value to push: ");
+    scanf("%d", &newNode->value);
+
+    node *oldHead = linkedList->next;
+
+    linkedList->next = newNode;
+    newNode->next = oldHead;
+}
