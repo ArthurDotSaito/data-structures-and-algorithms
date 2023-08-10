@@ -39,6 +39,8 @@ void release(node *linkedList)
             free(currentNode);
             currentNode = nextNode;
         }
+        free(currentNode);
+        free(linkedList);
     }
 }
 
