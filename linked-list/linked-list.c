@@ -103,3 +103,28 @@ void pop(node *linkedList)
         temp->next = newNode;
     }
 }
+
+void linkedListMenu(node *linkedList, int option)
+{
+    switch (option)
+    {
+    case 0:
+        release(linkedList);
+        break;
+    case 1:
+        showList(linkedList);
+        break;
+    case 2:
+        push(linkedList);
+        break;
+    case 3:
+        pop(linkedList);
+        break;
+    case 4:
+        generate(linkedList);
+        break;
+    default:
+        printf("invalid command");
+        break;
+    }
+}
