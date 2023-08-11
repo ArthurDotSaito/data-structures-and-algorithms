@@ -104,7 +104,7 @@ void pop(node *linkedList)
     }
 }
 
-void linkedListMenu(node *linkedList, int option)
+void linkedListOption(node *linkedList, int option)
 {
     switch (option)
     {
@@ -127,4 +127,19 @@ void linkedListMenu(node *linkedList, int option)
         printf("invalid command");
         break;
     }
+}
+
+int linkedListMenu()
+{
+    int option;
+    printf("Choose an option:\n");
+    printf("[0] - RELEASE:\n");
+    printf("[1] - PRINT ELEMENTS:\n");
+    printf("[2] - PUSH:\n");
+    printf("[3] - POP:\n");
+    printf("[4] - CLEAR LIST:\n");
+    printf("Type a choice:");
+    scanf("%d", &option);
+
+    return option;
 }
