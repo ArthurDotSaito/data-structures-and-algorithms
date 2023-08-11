@@ -56,7 +56,7 @@ void showList(node *linkedList)
 
     while (temp != NULL)
     {
-        printf("%d", temp->value);
+        printf("%d ", temp->value);
         temp = temp->next;
     }
     printf("\n\n");
@@ -82,6 +82,7 @@ void push(node *linkedList)
 void pop(node *linkedList)
 {
     node *newNode = (node *)malloc(sizeof(node));
+    if (!newNode)
     {
         printf("There's no available memory.\n");
         exit(1);
@@ -142,4 +143,23 @@ int linkedListMenu()
     scanf("%d", &option);
 
     return option;
+}
+
+int main()
+{
+    node *linkedList = (node *)malloc(sizeof(node));
+    if (!linkedList)
+    {
+        printf("There's no available memory.\n");
+        exit(1);
+    }
+    generate(linkedList);
+    int option;
+    do
+    {
+        option = linkedListMenu();
+        linkedListOption(linkedList, option);
+    } while (option);
+    free(linkedList);
+    return 0;
 }
