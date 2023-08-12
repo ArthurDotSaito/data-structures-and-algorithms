@@ -8,7 +8,34 @@ struct node
 };
 typedef struct node node;
 
-// Verify if likedList is null or empty
+int isEmpty(node *linkedList);
+void generate(node *linkedList);
+void release(node *linkedList);
+void showList(node *linkedList);
+void push(node *linkedList);
+void pop(node *linkedList);
+void linkedListOption(node *linkedList, int option);
+int linkedListMenu();
+
+int main()
+{
+    node *linkedList = (node *)malloc(sizeof(node));
+    if (!linkedList)
+    {
+        printf("There's no available memory.\n");
+        exit(1);
+    }
+    generate(linkedList);
+    int option;
+    do
+    {
+        option = linkedListMenu();
+        linkedListOption(linkedList, option);
+    } while (option);
+    free(linkedList);
+    return 0;
+}
+
 int isEmpty(node *linkedList)
 {
     if (linkedList->next == NULL)
@@ -21,7 +48,6 @@ int isEmpty(node *linkedList)
     }
 }
 
-// Generate linkedList firstNode
 void generate(node *linkedList)
 {
     linkedList->next = NULL;
@@ -143,23 +169,4 @@ int linkedListMenu()
     scanf("%d", &option);
 
     return option;
-}
-
-int main()
-{
-    node *linkedList = (node *)malloc(sizeof(node));
-    if (!linkedList)
-    {
-        printf("There's no available memory.\n");
-        exit(1);
-    }
-    generate(linkedList);
-    int option;
-    do
-    {
-        option = linkedListMenu();
-        linkedListOption(linkedList, option);
-    } while (option);
-    free(linkedList);
-    return 0;
 }
