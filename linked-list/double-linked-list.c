@@ -49,6 +49,31 @@ int isEmpty(node *linkedList)
     }
 }
 
+void generate(node *linkedList)
+{
+    linkedList->next = NULL;
+    linkedList->prev = NULL;
+}
+
+void release(node *linkedList)
+{
+    if (!isEmpty(linkedList))
+    {
+        node *nextNode, *currentNode;
+        currentNode = linkedList->next;
+        while (currentNode != NULL)
+        {
+            nextNode = currentNode->next;
+            free(currentNode);
+            currentNode = nextNode;
+        }
+        free(currentNode);
+        linkedList->next = NULL;
+        linkedList->prev = NULL;
+        free(linkedList);
+    }
+}
+
 void push(node *linkedList)
 {
     // Space for a newNode
@@ -78,6 +103,7 @@ void push(node *linkedList)
         linkedList->next = newNode;
         newNode->next = oldHead;
         newNode->prev = linkedList;
+
         oldHead->prev = newNode;
     }
 }
