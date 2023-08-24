@@ -107,6 +107,7 @@ void push(node *linkedList)
 
 void pop(node *linkedList)
 {
+    // memory allocation:
     node *newNode = (node *)malloc(sizeof(node));
     if (!newNode)
     {

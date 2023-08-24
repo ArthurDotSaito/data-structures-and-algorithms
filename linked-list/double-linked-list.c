@@ -74,6 +74,24 @@ void release(node *linkedList)
     }
 }
 
+void showList(node *linkedList)
+{
+    if (isEmpty(linkedList))
+    {
+        printf("List is empty.\n\n");
+        return;
+    }
+    node *temp;
+    temp = linkedList->next;
+
+    while (temp != NULL)
+    {
+        printf("%d ", temp->value);
+        temp = temp->next;
+    }
+    printf("\n\n");
+}
+
 void push(node *linkedList)
 {
     // Space for a newNode
@@ -105,5 +123,39 @@ void push(node *linkedList)
         newNode->prev = linkedList;
 
         oldHead->prev = newNode;
+    }
+}
+
+void pop(node *linkedList)
+{
+    // memory allocation:
+    node *newNode = (node *)malloc(sizeof(node));
+    if (!newNode)
+    {
+        printf("There's no available memory.\n");
+        exit(1);
+    }
+    printf("value to pop: ");
+    scanf("%d", &newNode->value);
+    if (isEmpty(linkedList))
+    {
+        // If the list is empty, the newNode becomes the first node
+        linkedList->next = newNode;
+        newNode->prev = linkedList;
+        newNode->next = NULL;
+    }
+    else
+    {
+        // Traverse to the end of the list
+        node *temp = linkedList->next;
+        while (temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+
+        // update pointers
+        temp->next = newNode;
+        newNode->prev = temp;
+        newNode->next = NULL;
     }
 }
