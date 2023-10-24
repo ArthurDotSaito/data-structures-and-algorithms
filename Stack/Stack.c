@@ -16,6 +16,7 @@ typedef struct Stack
 void push(Stack *s, char c);
 char top(Stack *s);
 int size(Stack *s);
+int isEmpty(Stack *s);
 
 Stack *start()
 {
@@ -48,4 +49,9 @@ char top(Stack *s)
 int size(Stack *s)
 {
     return s->size;
+}
+
+int isEmpty(Stack *s)
+{
+    return s->size == null;
 }
