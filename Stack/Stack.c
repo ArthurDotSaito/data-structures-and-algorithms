@@ -15,6 +15,7 @@ typedef struct Stack
 
 void push(Stack *s, char c);
 char top(Stack *s);
+int size(Stack *s);
 
 Stack *start()
 {
@@ -42,4 +43,9 @@ char top(Stack *s)
     }
 
     return s->top->value;
+}
+
+int size(Stack *s)
+{
+    return s->size;
 }
