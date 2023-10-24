@@ -14,6 +14,7 @@ typedef struct Stack
 } Stack;
 
 void push(Stack *s, char c);
+char top(Stack *s);
 
 Stack *start()
 {
@@ -30,4 +31,15 @@ void push(Stack *s, char c)
     s->top = e;
 
     s->size = s->size++;
+}
+
+char top(Stack *s)
+{
+    if (empty(s))
+    {
+        printf("Empty Stack");
+        return 0;
+    }
+
+    return s->top->value;
 }
