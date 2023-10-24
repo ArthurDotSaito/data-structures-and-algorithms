@@ -17,6 +17,7 @@ void push(Stack *s, char c);
 char top(Stack *s);
 int size(Stack *s);
 int isEmpty(Stack *s);
+char pop(Stack *s);
 
 Stack *start()
 {
@@ -53,5 +54,29 @@ int size(Stack *s)
 
 int isEmpty(Stack *s)
 {
-    return s->size == null;
+    return s->size == 0;
+}
+
+char pop(Stack *s)
+{
+    Element *e;
+    char c;
+
+    if (!isEmpty(s))
+    {
+        e = s->top;
+        c = e->value;
+        s->top = s->top->next;
+
+        s->size = s->size--;
+
+        free(e);
+        e = NULL;
+        return c;
+    }
+    else
+    {
+        printf("Stack is empty");
+        return '/0';
+    }
 }
