@@ -15,6 +15,7 @@ typedef struct queue
 } Queue;
 
 void enqueue(Queue *q, char c);
+char denqueue(Queue *q);
 int size(Queue *q);
 char head(Queue *q);
 int empty(Queue *q);
@@ -46,6 +47,32 @@ void enqueue(Queue *q, char c)
 
     q->tail = e;
     q->size = q->size++;
+}
+
+char denqueue(Queue *q)
+{
+    Element *e;
+    char c;
+
+    if (!empty(q))
+    {
+        e = q->head;
+        c = e->value;
+
+        q->head = e->next;
+        if (empty(q))
+        {
+            q->tail = NULL;
+        }
+        q->size = q->size--;
+        free(e);
+        return c;
+    }
+    else
+    {
+        printf("Empty Queue");
+        return '\0';
+    }
 }
 
 int size(Queue *q)
