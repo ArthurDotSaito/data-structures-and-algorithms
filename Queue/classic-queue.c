@@ -14,6 +14,8 @@ typedef struct queue
     int size;
 } Queue;
 
+void enqueue(Queue *q, char c);
+
 Queue *start()
 {
     Queue *q = malloc(sizeof(Queue));
@@ -23,3 +25,22 @@ Queue *start()
 
     return q;
 };
+
+void enqueue(Queue *q, char c)
+{
+    Element *e = malloc(sizeof(Element));
+    e->value = c;
+    e->next = NULL;
+
+    if (q->tail != NULL)
+    {
+        q->tail->next = e;
+    }
+    else
+    {
+        q->head = e;
+    }
+
+    q->tail = e;
+    q->size = q->size++;
+}
