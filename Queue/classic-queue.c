@@ -16,6 +16,7 @@ typedef struct queue
 
 void enqueue(Queue *q, char c);
 int size(Queue *q);
+char head(Queue *q);
 
 Queue *start()
 {
@@ -49,4 +50,9 @@ void enqueue(Queue *q, char c)
 int size(Queue *q)
 {
     return q->size;
+}
+
+char head(Queue *q)
+{
+    return q->head->value;
 }
