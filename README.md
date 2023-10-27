@@ -1,6 +1,6 @@
 <h1 align="center">Data Structures and Algorithms</h1>
 
-This repository serves as my space for catalog some of my learnings in data structures and algorithms. the majority of the codebase is/will be composed in C or C++, however I expect build Java and/or Javascript solutions in some moment.
+This repository serves as my space for catalog some of my learnings in data structures and algorithms. the majority of the codebase is/will be composed in C or C++, however I expect build the same solutions with different languages at some point.
 
 # Requisites
 
