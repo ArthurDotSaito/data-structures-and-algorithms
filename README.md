@@ -4,7 +4,22 @@ This repository serves as my space for catalog some of my learnings in data stru
 
 # Requisites
 
-As most of the codebase is written in C, is nice to have a compiler such as GCC.
+As most of the codebase is written in C, is nice to have a compiler such as GCC. 
+
+For linux Ubuntu distro, you can use
+```
+  sudo apt install gcc 
+```
+
+For Java, it's necessary the Java SDK (Do not forget to set the JAVA_HOME environment variable).
+
+```
+  sudo apt install default-jdk
+```
+
+C# .NET projects requires the ASP .NET SDK and runtime: [Here](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-2204)
+
+
 
 # Data Structures
 
