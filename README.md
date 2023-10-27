@@ -10,6 +10,10 @@ As most of the codebase is written in C, is nice to have a compiler such as GCC.
 
 - Linked Lists
   - Simple Linked Lists
+  - Double Linked Lists
+- Stack
+- Queue
+  - Classic Queue
 
 # License
 
