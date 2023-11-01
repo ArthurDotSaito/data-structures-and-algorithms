@@ -9,6 +9,8 @@ int quantity, head, tail;
 
 void start();
 void enqueue(char c);
+int size();
+char headValue();
 
 void start()
 {
@@ -34,4 +36,14 @@ void enqueue(char c)
             printf("full queue");
         }
     }
+}
+
+int size()
+{
+    return quantity;
+}
+
+char headValue()
+{
+    return queue[head];
 }
