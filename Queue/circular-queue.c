@@ -11,6 +11,8 @@ void start();
 void enqueue(char c);
 int size();
 char headValue();
+char dequeue();
+int empty();
 
 void start()
 {
@@ -31,10 +33,10 @@ void enqueue(char c)
         {
             tail = 0;
         }
-        else
-        {
-            printf("full queue");
-        }
+    }
+    else
+    {
+        printf("full queue");
     }
 }
 
@@ -46,4 +48,31 @@ int size()
 char headValue()
 {
     return queue[head];
+}
+
+char dequeue()
+{
+    char c;
+    if (!empty())
+    {
+        c = queue[head];
+        queue[head] = '\0';
+        head++;
+        quantity--;
+
+        if (head == SIZE)
+        {
+            head = 0;
+        }
+        return c;
+    }
+    else
+    {
+        printf("Full queue");
+    }
+}
+
+int empty()
+{
+    return quantity == 0;
 }
