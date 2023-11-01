@@ -27,4 +27,4 @@ A fila é um tipo de estrutura de dados que possui algumas variantes, que acabam
 
   ### Clássica
 
-  A fila clássica é autoexplicativa e se comporta de forma estritamente conceitual.
+  A fila clássica é autoexplicativa e se comporta de forma estritamente conceitual, onde pode-se enfileirar e/ou desinfileirar coisas.
