@@ -19,7 +19,31 @@ char denqueue(Queue *q);
 int size(Queue *q);
 char head(Queue *q);
 int empty(Queue *q);
+void releaseQueue(Queue *queue);
+int queueMenu();
+void queueOption(Queue *queue, int option);
 
+int main()
+{
+    Queue *queue = start();
+    if (!queue)
+    {
+        printf("There's no available memory.\n");
+        exit(1);
+    }
+
+    int option;
+    do
+    {
+        option = queueMenu();
+        queueOption(queue, option);
+    } while (option);
+
+    // Aqui você deve liberar a memória da fila quando terminar
+    // ...
+
+    return 0;
+}
 Queue *start()
 {
     Queue *q = malloc(sizeof(Queue));
@@ -29,6 +53,66 @@ Queue *start()
 
     return q;
 };
+
+int queueMenu()
+{
+    int option;
+    printf("\nChoose an option:\n");
+    printf("[0] - Exit\n");
+    printf("[1] - Print Queue Size\n");
+    printf("[2] - Enqueue a character\n");
+    printf("[3] - Dequeue a character\n");
+    printf("[4] - Get head of the queue\n");
+    printf("Type your option: ");
+    scanf("%d", &option);
+
+    return option;
+}
+
+void queueOption(Queue *queue, int option)
+{
+    char value;
+    switch (option)
+    {
+    case 0:
+        releaseQueue(queue);
+        printf("Queue released.\n");
+        break;
+
+    case 1:
+        printf("Enter a char to enqueue:");
+        scanf("%c", &value);
+        enqueue(queue, value);
+        break;
+
+    case 2:
+        printf("Queue size: %d\n", size(queue));
+        break;
+
+    case 3:
+        value = denqueue(queue);
+        if (value != '\0')
+        {
+            printf("Dequeued character: %c\n", value);
+        }
+        break;
+
+    case 4:
+        if (!empty(queue))
+        {
+            printf("Head of the queue: %c\n", head(queue));
+        }
+        else
+        {
+            printf("Queue is empty.\n");
+        }
+        break;
+    default:
+        printf("Invalid Command/n");
+
+        break;
+    }
+}
 
 void enqueue(Queue *q, char c)
 {
@@ -73,6 +157,19 @@ char denqueue(Queue *q)
         printf("Empty Queue");
         return '\0';
     }
+}
+
+void releaseQueue(Queue *queue)
+{
+    Element *current, *next;
+    current = queue->head;
+    while (current != NULL)
+    {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+    free(queue);
 }
 
 int size(Queue *q)
