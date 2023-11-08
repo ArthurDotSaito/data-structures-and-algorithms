@@ -39,9 +39,6 @@ int main()
         queueOption(queue, option);
     } while (option);
 
-    // Aqui você deve liberar a memória da fila quando terminar
-    // ...
-
     return 0;
 }
 Queue *start()
