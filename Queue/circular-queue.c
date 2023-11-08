@@ -12,6 +12,7 @@ void enqueue(char c);
 int size();
 char headValue();
 char dequeue();
+void printQueue();
 int empty();
 
 void start()
@@ -70,6 +71,16 @@ char dequeue()
     {
         printf("Full queue");
     }
+}
+
+void printQueue()
+{
+    printf("Queue: ");
+    for (int i = 0, index = head; i < quantity; i++, index = (index + 1) % SIZE)
+    {
+        printf("%c ", queue[index]);
+    }
+    printf("\n");
 }
 
 int empty()
