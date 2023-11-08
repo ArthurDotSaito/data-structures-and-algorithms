@@ -153,3 +153,8 @@ int empty()
 {
     return quantity == 0;
 }
+
+int full()
+{
+    return quantity == SIZE;
+}

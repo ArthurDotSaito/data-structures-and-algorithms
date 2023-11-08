@@ -28,3 +28,11 @@ A fila é um tipo de estrutura de dados que possui algumas variantes, que acabam
   ### Clássica
 
   A fila clássica é autoexplicativa e se comporta de forma estritamente conceitual, onde pode-se enfileirar e/ou desinfileirar coisas.
+
+  ### Circular
+
+  Uma fila circular possui a propriedade de que seu ultimo elemento (ou nó, dependendo da forma como se implementa),se liga ao primeiro elemento. Isso torna possível acessar todos os elementos da fila a partir de qualquer ponto. Para a implementação em vetores, existem controles que navegam através dos índices do vetor a fim de indicar o começo e fim da fila.
+
+  ## Referências
+
+  - Knuth, Donald E. The Art of Computer Programming vol.1 - Fundamental Algorithms. 3rd ed.1997.
