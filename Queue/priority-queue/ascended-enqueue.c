@@ -122,17 +122,55 @@ void enqueue(Queue *q, char c, int prority)
     e->priority = prority;
     e->next = NULL;
 
-    if (q->tail != NULL)
+    if (q->head == NULL)
     {
-        q->tail->next = e;
+        q->head = e;
+        q->tail = e;
+        q->size++;
     }
     else
     {
+        if (e->priority > q->tail->priority)
+        {
+            q->tail->next = e;
+            q->tail = e;
+            q->size++;
+
+            return;
+        }
+    }
+    if (e->priority < q->tail->priority)
+    {
+        e->next = q->head;
         q->head = e;
+        q->size++;
+
+        return;
     }
 
-    q->tail = e;
-    q->size = q->size++;
+    Element *controll = q->head;
+    Element *previous;
+
+    while (controll->next != NULL)
+    {
+        if (e->priority < controll->priority)
+        {
+            e->next = controll;
+            previous->next = e;
+            q->size++;
+
+            return;
+        }
+        else
+        {
+            previous = controll;
+            controll = controll->next;
+        }
+    }
+    free(previous);
+    free(controll);
+    previous = NULL;
+    controll = NULL;
 }
 
 char denqueue(Queue *q)
