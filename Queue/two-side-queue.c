@@ -10,9 +10,11 @@ int quantity, head, tail;
 void start();
 int menu();
 void enqueue(char c);
+void head_enqueue(char c);
 int size();
 char headValue();
 char dequeue();
+void tail_dequeue();
 void printQueue();
 int empty();
 
@@ -67,8 +69,7 @@ int main()
 void start()
 {
     quantity = 0;
-    head = 0;
-    tail = 0;
+    head, tail = -1;
 }
 
 int menu()
@@ -104,6 +105,35 @@ void enqueue(char c)
     else
     {
         printf("full queue");
+    }
+}
+
+void head_enqueue(char c)
+{
+    if (full())
+    {
+        printf("Full queue");
+    }
+    else
+    {
+        if (empty())
+        {
+            head = 0;
+            tail = 0;
+        }
+        else
+        {
+            if (head == 0)
+            {
+                head = SIZE - 1;
+            }
+            else
+            {
+                head = head - 1;
+            }
+        }
+        quantity++;
+        queue[head] = c;
     }
 }
 
