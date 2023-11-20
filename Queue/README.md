@@ -45,6 +45,10 @@ A fila é um tipo de estrutura de dados que possui algumas variantes, que acabam
 
   Uma fila de prioridade descendente é similar ao caso ascendente, entretanto, a remoção sempre se dá no item de maior prioridade. Ou seja, se o enfileiramento for modificado, a fila sempre estará ordenada de forma que o elemento de maior prioridade esteja na frente (cabeça). Com modificação no desenfileiramento, o item a ser desenfileirado será sempre o de maior prioridade.
 
+  ### Dupla extremidade
+
+  Permite o enfileiramento e desenfileiramento em ambas as extremidades e possui implementação circular. As operações de enfileiramento e desenfileiramento ocorrem sempre do mesmo lado, ou seja, se determinado elemento for enfileirado pela direita, deverá obrigatóriamente ser desenfileirado pela direita.
+
   ## Referências
 
   - Knuth, Donald E. The Art of Computer Programming vol.1 - Fundamental Algorithms. 3rd ed.1997.
