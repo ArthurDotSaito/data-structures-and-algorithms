@@ -47,7 +47,7 @@ A fila é um tipo de estrutura de dados que possui algumas variantes, que acabam
 
   ### Dupla extremidade
 
-  Permite o enfileiramento e desenfileiramento em ambas as extremidades e possui implementação circular. As operações de enfileiramento e desenfileiramento ocorrem sempre do mesmo lado, ou seja, se determinado elemento for enfileirado pela direita, deverá obrigatóriamente ser desenfileirado pela direita.
+  Permite o enfileiramento e desenfileiramento em ambas as extremidades e possui implementação circular. As operações de enfileiramento e desenfileiramento ocorrem sempre do mesmo lado, ou seja, se determinado elemento for enfileirado pela direita, deverá obrigatóriamente ser desenfileirado pela direita. Em termos práticos, esse tipo de fila apresenta - em relação à uma fila clássica/circular - duas novas operações: Enfileirar a partir do "começo" (head) e desenfileirar a partir do fim.
 
   ## Referências
 
