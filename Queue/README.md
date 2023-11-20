@@ -53,3 +53,4 @@ A fila é um tipo de estrutura de dados que possui algumas variantes, que acabam
 
   - Knuth, Donald E. The Art of Computer Programming vol.1 - Fundamental Algorithms. 3rd ed.1997.
   - Tanembaum, Aaron M. Data structures using C. 1st ed. 1989.
+  - Carvalho, Thiago L. Estruturas de Dados. 1ed. 2023.
